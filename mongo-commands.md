@@ -91,12 +91,18 @@ db.studentData.find({ age: { $lt: 25 } })
   city: 'Hyderabad'
 }
 ###query7
-db.studentData.find({ age: { $gt: 20 }, city: "Gudur" })
+db.studentData.find({
+  $and: [
+    { age: { $gt: 20 } },
+    { city: "Gudur" }
+  ]
+})
 {
-  _id: ObjectId('685fb1e7656d6911f5005181'),
-  name: 'Divya',
+  _id: ObjectId("685fb1e7656d6911f5005181"),
+  name: "Divya",
   age: 22,
-  city: 'Gudur'
+  city: "Gudur"
 }
+
 
 
